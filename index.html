@@ -5,8 +5,10 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <title>Swift Websockets by Kristaps Grinbergs</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="midnight.css">
   </head>
 
   <body>
@@ -25,62 +27,68 @@
       </div>
       <div class="example">
         <h2>// <span class="caps">Create</span> the Connection</h2>
-        <div class="code-wrapper">
-          <p class="code">
-            let request = URLRequest(url:URL(string:<br>"ws://online.swiftplayground.run/terminal")!)
-            websocket = WebSocket(request: request)<br>
-            websocket?.delegate = self<br>
-            websocket?.connect()
-          </p>
-        </div>
+
+        <pre><code><span class="keyword">let</span> webSocketDelegate = <span class="type">WebSocketDelegate</span>()
+<span class="keyword">let</span> session = <span class="type">URLSession</span>(configuration: .<span class="dotAccess">default</span>,
+                      delegate: webSocketDelegate,
+                      delegateQueue: <span class="type">OperationQueue</span>())
+
+<span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="string">"wss://echo.websocket.org"</span>)!
+
+<span class="comment">// Crate the WebSocket task</span>
+<span class="keyword">let</span> webSocketTask = session.<span class="call">webSocketTask</span>(with: url)</code></pre>
       </div>
 
       <div class="example">
         <h2>// <span class="caps">Send</span> the Data</h2>
-        <div class="code-wrapper">
-          <p class="code">
-           testy
-            websocket = WebSocket(request: request)<br>
-            websocket?.delegate = self<br>
-            websocket?.connect()
-          </p>
-        </div>
+        <pre><code><span class="keyword">let</span> webSocketDelegate = <span class="type">WebSocketDelegate</span>()
+          <span class="keyword">let</span> session = <span class="type">URLSession</span>(configuration: .<span class="dotAccess">default</span>,
+                                delegate: webSocketDelegate,
+                                delegateQueue: <span class="type">OperationQueue</span>())
+          
+          <span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="string">"wss://echo.websocket.org"</span>)!
+          
+          <span class="comment">// Crate the WebSocket task</span>
+          <span class="keyword">let</span> webSocketTask = session.<span class="call">webSocketTask</span>(with: url)</code></pre>
       </div>
 
       <div class="example">
         <h2>// <span class="caps">Receive</span> the Data</h2>
-        <div class="code-wrapper">
-          <p class="code">
-            test
-            websocket = WebSocket(request: request)<br>
-            websocket?.delegate = self<br>
-            websocket?.connect()
-          </p>
-        </div>
+        <pre><code><span class="keyword">let</span> webSocketDelegate = <span class="type">WebSocketDelegate</span>()
+          <span class="keyword">let</span> session = <span class="type">URLSession</span>(configuration: .<span class="dotAccess">default</span>,
+                                delegate: webSocketDelegate,
+                                delegateQueue: <span class="type">OperationQueue</span>())
+          
+          <span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="string">"wss://echo.websocket.org"</span>)!
+          
+          <span class="comment">// Crate the WebSocket task</span>
+          <span class="keyword">let</span> webSocketTask = session.<span class="call">webSocketTask</span>(with: url)</code></pre>
       </div>
 
       <div class="example">
         <h2>// <span class="caps">Ping/Pong</span></h2>
-        <div class="code-wrapper">
-          <p class="code">
-            let request = URLRequest(url:URL(string:<br>"ws://online.swiftplayground.run/terminal")!)
-            websocket = WebSocket(request: request)<br>
-            websocket?.delegate = self<br>
-            websocket?.connect()
-          </p>
-        </div>
+        <pre><code><span class="keyword">let</span> webSocketDelegate = <span class="type">WebSocketDelegate</span>()
+          <span class="keyword">let</span> session = <span class="type">URLSession</span>(configuration: .<span class="dotAccess">default</span>,
+                                delegate: webSocketDelegate,
+                                delegateQueue: <span class="type">OperationQueue</span>())
+          
+          <span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="string">"wss://echo.websocket.org"</span>)!
+          
+          <span class="comment">// Crate the WebSocket task</span>
+          <span class="keyword">let</span> webSocketTask = session.<span class="call">webSocketTask</span>(with: url)</code></pre>
       </div>
 
       <div class="example">
         <h2>// <span class="caps">Close</span> the Connection</h2>
-        <div class="code-wrapper">
-          <p class="code">
-            let request = URLRequest(url:URL(string:<br>"ws://online.swiftplayground.run/terminal")!)
-            websocket = WebSocket(request: request)<br>
-            websocket?.delegate = self<br>
-            websocket?.connect()
-          </p>
-        </div>
+        <pre><code><span class="keyword">let</span> webSocketDelegate = <span class="type">WebSocketDelegate</span>()
+          <span class="keyword">let</span> session = <span class="type">URLSession</span>(configuration: .<span class="dotAccess">default</span>,
+                                delegate: webSocketDelegate,
+                                delegateQueue: <span class="type">OperationQueue</span>())
+          
+          <span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="string">"wss://echo.websocket.org"</span>)!
+          
+          <span class="comment">// Crate the WebSocket task</span>
+          <span class="keyword">let</span> webSocketTask = session.<span class="call">webSocketTask</span>(with: url)</code></pre>
       </div>
 
       <div class="materials">
@@ -89,7 +97,7 @@
       </div>
 
       <footer>
-        <p class="text--sm">Made with ❤ in LV</p>
+        <p class="text--sm">Made with ❤️ in 🇱🇻</p>
         <p class="text--sm">
           by <a class="link--red" href="">@fassko</a> & <a class="link--red" href="https://github.com/Ninuce">@ninuce</a>
         </p>
