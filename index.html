@@ -1,1 +1,98 @@
-It works!
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <title>Swift Websockets by Kristaps Grinbergs</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="intro">
+        <h1>
+          <img src="" alt="Swift logo">
+          Swift Websockets
+        </h1>
+        <p class="intro-text">
+          This is a quick starter guide how to work with WebSockets in our Swift projects for iOS, iPadOS, tvOS, watchOS and macOS.
+        </p>
+        <p>
+          From iOS 13.0+, iPadOS 13.0+, macOS 10.15+, tvOS 13.0+ and watchOS 6.0+ you can use <a href="#">URLWebSocketTask</a>. For earlier versions please refer [here](my blog post).
+        </p>
+      </div>
+      <div class="example">
+        <h2>// <span class="caps">Create</span> the Connection</h2>
+        <div class="code-wrapper">
+          <p class="code">
+            let request = URLRequest(url:URL(string:<br>"ws://online.swiftplayground.run/terminal")!)
+            websocket = WebSocket(request: request)<br>
+            websocket?.delegate = self<br>
+            websocket?.connect()
+          </p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Send</span> the Data</h2>
+        <div class="code-wrapper">
+          <p class="code">
+           testy
+            websocket = WebSocket(request: request)<br>
+            websocket?.delegate = self<br>
+            websocket?.connect()
+          </p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Receive</span> the Data</h2>
+        <div class="code-wrapper">
+          <p class="code">
+            test
+            websocket = WebSocket(request: request)<br>
+            websocket?.delegate = self<br>
+            websocket?.connect()
+          </p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Ping/Pong</span></h2>
+        <div class="code-wrapper">
+          <p class="code">
+            let request = URLRequest(url:URL(string:<br>"ws://online.swiftplayground.run/terminal")!)
+            websocket = WebSocket(request: request)<br>
+            websocket?.delegate = self<br>
+            websocket?.connect()
+          </p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Close</span> the Connection</h2>
+        <div class="code-wrapper">
+          <p class="code">
+            let request = URLRequest(url:URL(string:<br>"ws://online.swiftplayground.run/terminal")!)
+            websocket = WebSocket(request: request)<br>
+            websocket?.delegate = self<br>
+            websocket?.connect()
+          </p>
+        </div>
+      </div>
+
+      <div class="materials">
+        <a class="link--white" href="">
+          <img class="link-icon" src="" alt="Swift icon">Download Playground</a>
+      </div>
+
+      <footer>
+        <p class="text--sm">Made with ❤ in LV</p>
+        <p class="text--sm">
+          by <a class="link--red" href="">@fassko</a> & <a class="link--red" href="https://github.com/Ninuce">@ninuce</a>
+        </p>
+      </footer>
+    </div>
+  </body>
