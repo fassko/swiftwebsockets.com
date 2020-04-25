@@ -22,7 +22,9 @@ class WebSocketDelegate: NSObject, URLSessionWebSocketDelegate {
 }
 
 let webSocketDelegate = WebSocketDelegate()
-let session = URLSession(configuration: .default, delegate: webSocketDelegate, delegateQueue: OperationQueue())
+let session = URLSession(configuration: .default,
+                         delegate: webSocketDelegate,
+                         delegateQueue: OperationQueue())
 
 let url = URL(string: "wss://echo.websocket.org")!
 
