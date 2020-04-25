@@ -13,6 +13,11 @@ body {
 a {
   color: #7000FF;
   font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 p {
@@ -44,7 +49,7 @@ h2 {
 }
 
 .text--sm {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .caps {
@@ -77,6 +82,7 @@ h2 {
 .materials {
   padding-top: 60px;
   text-align: center;
+  font-size: 24px;
 }
 
 footer {
