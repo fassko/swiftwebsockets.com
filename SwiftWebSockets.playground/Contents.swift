@@ -11,6 +11,7 @@ class WebSocketDelegate: NSObject, URLSessionWebSocketDelegate {
     print("WebSocket did connect")
     send()
     receive()
+    ping()
   }
   
   func urlSession(_ session: URLSession,
@@ -59,6 +60,24 @@ func send() {
       print("Error when sending a message \(error)")
     }
   }
+}
+
+/// Send PING
+func ping() {
+  webSocketTask.sendPing { error in
+    if let error = error {
+      print("Error when sending PING \(error)")
+    }
+    
+    // When PONG received send again PING
+    ping()
+  }
+}
+
+/// Closing the connection
+func close() {
+  let reason = "Goodbye".data(using: .utf8)
+  webSocketTask.cancel(with: .goingAway, reason: reason)
 }
 
 // Connecting to the WebSocket
