@@ -1,1 +1,105 @@
-It works!
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="og:site_name" content="Kristaps Grinbergs">
+    <link rel="canonical" href="https://www.swiftwebsockets.com">
+    <meta name="twitter:url" content="https://www.swiftwebsockets.com">
+    <meta name="twitter:title" content="Swift WebSockets">
+    <meta name="og:url" content="https://www.swiftwebsockets.com">
+    <title>Swift Websockets by Kristaps Grinbergs</title>
+    <meta name="description" content="Swift Websockets by Kristaps Grinbergs">
+    <meta name="twitter:description" content="Swift Websockets by Kristaps Grinbergs">
+    <meta name="og:description" content="Swift Websockets by Kristaps Grinbergs">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="midnight.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="intro">
+        <h1>
+          <img class="swift-logo" src="swift-logo.svg" alt="Swift logo">
+          Swift Websockets
+        </h1>
+        <p class="intro-text">
+          This is a quick starter guide how to work with WebSockets in our Swift projects for iOS, iPadOS, tvOS, watchOS and macOS.
+        </p>
+        <p class="intro-text">
+          From iOS 13.0+, iPadOS 13.0+, macOS 10.15+, tvOS 13.0+ and watchOS 6.0+ you can use <a href="#">URLWebSocketTask</a>. For earlier versions please refer <a href="https://kristaps.me/websockets-swift/" target="_blank">here</a>.
+        </p>
+      </div>
+      <div class="example">
+        <h2>// <span class="caps">Create</span> the Connection</h2>
+
+        <pre><code><span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="string">"wss://echo.websocket.org"</span>)!
+<span class="keyword">let</span> webSocketTask = <span class="type">URLSession</span>.<span class="property">shared</span>.<span class="call">webSocketTask</span>(with: url)
+          
+webSocketTask.<span class="call">resume</span>()</code></pre>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Send</span> the Data</h2>
+
+        <pre><code>webSocketTask.<span class="call">send</span>(.<span class="call">string</span>(<span class="string">"Hello"</span>)) { error <span class="keyword">in
+if let</span> error = error {
+    <span class="call">print</span>(<span class="string">"Error when sending a message</span> \(error)<span class="string">"</span>)
+  }
+}</code></pre>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Receive</span> the Data</h2>
+
+        <pre><code>webSocketTask.<span class="call">receive</span> { result <span class="keyword">in
+  switch</span> result {
+  <span class="keyword">case</span> .<span class="dotAccess">success</span>(<span class="keyword">let</span> message):
+    <span class="keyword">switch</span> message {
+    <span class="keyword">case</span> .<span class="dotAccess">data</span>(<span class="keyword">let</span> data):
+      <span class="call">print</span>(<span class="string">"Data received</span> \(data)<span class="string">"</span>)
+    <span class="keyword">case</span> .<span class="dotAccess">string</span>(<span class="keyword">let</span> text):
+      <span class="call">print</span>(<span class="string">"Text received</span> \(text)<span class="string">"</span>)
+    }
+  <span class="keyword">case</span> .<span class="dotAccess">failure</span>(<span class="keyword">let</span> error):
+    <span class="call">print</span>(<span class="string">"Error when receiving</span> \(error)<span class="string">"</span>)
+  }
+}</code></pre>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Ping/Pong</span></h2>
+
+        <pre><code>webSocketTask.<span class="call">sendPing</span> { error <span class="keyword">in
+  if let</span> error = error {
+    <span class="call">print</span>(<span class="string">"Error when sending PING</span> \(error)<span class="string">"</span>)
+  }
+}</code></pre>
+      </div>
+
+      <div class="example">
+        <h2>// <span class="caps">Close</span> the Connection</h2>
+
+        <pre><code><span class="keyword">let</span> reason = <span class="string">"Goodbye"</span>.<span class="call">data</span>(using: .<span class="dotAccess">utf8</span>)
+webSocketTask.<span class="call">cancel</span>(with: .<span class="dotAccess">goingAway</span>, reason: reason)</code></pre>
+      </div>
+
+      <div class="materials">
+        <a class="link--white" href="SwiftWebSockets.playground">
+          <img class="link-icon" src="playground-icon.svg" alt="Swift playgrounds" class="playground-icon">
+          Download Playground
+        </a>
+      </div>
+
+      <footer>
+        <p class="text--sm">Made with ❤️ in 🇱🇻</p>
+        <p class="text--sm">
+          by <a class="link--red" href="https://twitter.com/fassko" target="_blank">@fassko</a> & <a class="link--red" href="https://github.com/Ninuce" target="_blank">@ninuce</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

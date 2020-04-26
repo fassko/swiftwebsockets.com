@@ -1,0 +1,59 @@
+ pre {
+  margin-bottom: 1.5em;
+  background-color: rgb(30,32,40);
+  padding: 16px 0;
+  border-radius: 16px;
+}
+
+pre code {
+  /* font-family: monospace; */
+  font-family: 'Source Code Pro', monospace;
+  display: block;
+  padding: 0 20px;
+  color: #E5E5E5;
+  line-height: 1.4em;
+  font-size: 0.95em;
+  overflow-x: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+
+  /* padding: 18px 22px;
+  border-radius: 16px;
+  background-color: #333; */
+}
+
+pre code .keyword {
+  color: #dc3ea4;
+}
+
+pre code .type {
+  color: #41B645;
+}
+
+pre code .call {
+  color: #348fe5;
+}
+
+pre code .property {
+  color: #21ab9d;
+}
+
+pre code .number {
+  color: #786DC4;
+}
+
+pre code .string {
+  color: #DB2C38;
+}
+
+pre code .comment {
+  color: #41B645;
+}
+
+pre code .dotAccess {
+  color: #00A0BE;
+}
+
+pre code .preprocessing {
+  color: #C67C48;
+}
