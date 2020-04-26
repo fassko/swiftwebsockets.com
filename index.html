@@ -46,7 +46,7 @@ webSocketTask.<span class="call">resume</span>()</code></pre>
         <h2>// <span class="caps">Send</span> the Data</h2>
 
         <pre><code>webSocketTask.<span class="call">send</span>(.<span class="call">string</span>(<span class="string">"Hello"</span>)) { error <span class="keyword">in
-if let</span> error = error {
+    if let</span> error = error {
     <span class="call">print</span>(<span class="string">"Error when sending a message</span> \(error)<span class="string">"</span>)
   }
 }</code></pre>
@@ -74,7 +74,7 @@ if let</span> error = error {
         <h2>// <span class="caps">Ping/Pong</span></h2>
 
         <pre><code>webSocketTask.<span class="call">sendPing</span> { error <span class="keyword">in
-  if let</span> error = error {
+    if let</span> error = error {
     <span class="call">print</span>(<span class="string">"Error when sending PING</span> \(error)<span class="string">"</span>)
   }
 }</code></pre>
