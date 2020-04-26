@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin-top: 0;
   padding: 0;
   background-color: #111;;
 }
@@ -28,7 +28,7 @@ p {
 
 h1 {
   color: #fff;
-  font-size: 4.0em;
+  font-size: 64px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -57,7 +57,7 @@ h2 {
 }
 
 .link-icon {
-  padding-right: 6px;
+  padding-right: 20px;
 }
 
 .text--sm {
@@ -94,11 +94,71 @@ h2 {
 .materials {
   padding-top: 60px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 22px;
 }
 
 footer {
   padding-top: 80px;
   padding-bottom: 60px;
   text-align: center;
+}
+
+
+@media(max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .intro {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .swift-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+  }
+  
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 4px;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    line-height: 1.5;
+    padding-bottom: 10px;
+  }
+
+  .example {
+    padding-bottom: 10px;
+  }
+
+  .link-icon {
+    height: 40px;
+    width: auto;
+    padding-right: 12px;
+  }
+
+  .materials {
+    padding-top: 34px;
+    font-size: 20px;
+  }
+
+  footer {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .text--sm {
+    font-size: 14px;
+  }
 }
