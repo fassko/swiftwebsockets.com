@@ -103,6 +103,17 @@ footer {
   text-align: center;
 }
 
+.github {
+  margin-top: 50px;
+}
+
+.github a {
+  opacity: 50%;
+}
+
+.github a:hover {
+  opacity: 100%;
+}
 
 @media(max-width: 768px) {
   .wrapper {
